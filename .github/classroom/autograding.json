@@ -1,0 +1,94 @@
+{
+  "tests": [
+    {
+      "name": "Zadanie 1",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_1_test_1.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Zadanie 2 kody odp",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_2_test_1.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 2 messages",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_2_test_2.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 3 json",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_3_test_1.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 3 html i bledy",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_3_test_2.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "zadanie 4 get",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_4_test_1.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 4 put",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_4_test_2.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 4 redirect",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_4_test_3.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "zadanie 4 delete",
+      "setup": "sudo -H pip3 install requests",
+      "run": "python task_4_test_4.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
