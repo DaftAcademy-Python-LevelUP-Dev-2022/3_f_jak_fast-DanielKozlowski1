@@ -5,6 +5,7 @@ from typing import Dict, List, Union
 from fastapi import FastAPI, HTTPException, Request, Header
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, BaseSettings
+from pyparsing import Optional
 
 
 class Settings(BaseSettings):
@@ -123,8 +124,8 @@ def get_html():
     </html>
     """
 
-@app.get("/info", response_class=Union[HTMLResponse, JSONResponse])
-def info(format: str, request: Request):
+@app.get("/info")
+def info(format: str, user_agent: Optional[str] = Header(None)):
     if format == "json":
-        return {"user_agent": request.headers.get("User-Agent")}
+        return {"user_agent": user_agent}
 
