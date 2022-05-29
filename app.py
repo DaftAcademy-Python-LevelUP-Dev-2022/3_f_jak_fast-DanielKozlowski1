@@ -151,16 +151,16 @@ def login(
 
     return templates.TemplateResponse(
         "template_wiek.html.j2",
-        {"wiek": age, "imie": user},
+        {"request": request, "wiek": age, "imie": user},
     )
 
 @app.get("/info")
-def info(format: str, req: Request):
+def info(format: str, request: Request):
     if format == "json":
-        return {"user_agent": req.headers.get("User-Agent")}
+        return {"user_agent": request.headers.get("User-Agent")}
     elif format == "html":
         return templates.TemplateResponse(
             "template.html.j2",
-            {"agent": req.headers.get("User-Agent")}
+            {"request": request, "agent": request.headers.get("User-Agent")}
         )
 
