@@ -2,11 +2,14 @@
 import datetime
 from typing import Dict, List, Union
 
-from fastapi import FastAPI, HTTPException, Request, Header
+from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, BaseSettings
-from pyparsing import Optional
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
+templates = Jinja2Templates(directory="templates")
+security = HTTPBasic()
 
 class Settings(BaseSettings):
     events_counter: int = 0
@@ -124,8 +127,40 @@ def get_html():
     </html>
     """
 
+@app.post("/check", response_class=HTMLResponse)
+def login(
+    request: Request, credentials: HTTPBasicCredentials = Depends(security)
+):
+
+    user = credentials.username
+    password = credentials.password
+
+    try:
+        _ = datetime.datetime.strptime(password, "%Y-%m-%d")
+
+    except:
+        raise HTTPException(status_code=401, detail="Wrong data")
+
+    age = (
+        datetime.datetime.today().year
+        - datetime.datetime.strptime(password, "%Y-%m-%d").year
+    )
+
+    if age < 16:
+        raise HTTPException(status_code=401, detail="Too young")
+
+    return templates.TemplateResponse(
+        "template_wiek.html.j2",
+        {"wiek": age, "imie": user},
+    )
+
 @app.get("/info")
 def info(format: str, req: Request):
     if format == "json":
         return {"user_agent": req.headers.get("User-Agent")}
+    elif format == "html":
+        return templates.TemplateResponse(
+            "template.html.j2",
+            {"agent": req.headers.get("User-Agent")}
+        )
 
