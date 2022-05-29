@@ -163,4 +163,6 @@ def info(format: str, request: Request):
             "template.html.j2",
             {"request": request, "agent": request.headers.get("User-Agent")}
         )
+    else:
+        raise HTTPException(status_code=400)
 
