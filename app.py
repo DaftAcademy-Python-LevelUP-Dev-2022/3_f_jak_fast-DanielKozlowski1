@@ -124,7 +124,7 @@ def get_html():
     """
 
 @app.get("/info", response_class=Union[HTMLResponse, JSONResponse])
-def info(format: str, user_agent: str | None = Header(default=None)):
+def info(format: str, request: Request):
     if format == "json":
-        return {"user_agent": user_agent}
+        return {"user_agent": request.headers.get("User-Agent")}
 
