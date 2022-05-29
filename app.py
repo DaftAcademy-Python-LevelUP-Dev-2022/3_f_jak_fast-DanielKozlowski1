@@ -125,7 +125,7 @@ def get_html():
     """
 
 @app.get("/info")
-def info(format: str, user_agent: Optional[str] = Header(...)):
+def info(format: str, req: Request):
     if format == "json":
-        return {"user_agent": user_agent}
+        return {"user_agent": req.headers.get("User-Agent")}
 
