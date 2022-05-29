@@ -1,8 +1,9 @@
-import datetime
-from typing import List
 
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse
+import datetime
+from typing import Dict, List, Union
+
+from fastapi import FastAPI, HTTPException, Request, Header
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, BaseSettings
 
 
@@ -121,3 +122,9 @@ def get_html():
         </body>
     </html>
     """
+
+@app.get("/info", response_class=Union[HTMLResponse, JSONResponse])
+def info(format: str, user_agent: str | None = Header(default=None)):
+    if format == "json":
+        return {"user_agent": user_agent}
+
