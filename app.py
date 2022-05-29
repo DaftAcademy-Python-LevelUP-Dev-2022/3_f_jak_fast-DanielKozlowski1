@@ -1,6 +1,6 @@
 
 import datetime
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Optional
 
 from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -155,7 +155,9 @@ def login(
     )
 
 @app.get("/info")
-def info(format: str, request: Request):
+def info(request: Request, format: Optional[str] = None):
+    if format is None:
+        raise HTTPException(status_code=400)
     if format == "json":
         return {"user_agent": request.headers.get("User-Agent")}
     elif format == "html":
