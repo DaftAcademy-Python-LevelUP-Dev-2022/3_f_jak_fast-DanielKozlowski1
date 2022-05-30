@@ -169,30 +169,30 @@ def info(request: Request, format: Optional[str] = None):
     else:
         raise HTTPException(status_code=400)
 
-@app.get("/save/{str_variable}", status_code=200)
-def save_fun_get(str_variable: str):
+# @app.get("/save/{str_variable}", status_code=200)
+# def save_fun_get(str_variable: str):
 
-    if str_variable not in settings.str_to_save:
-        raise HTTPException(status_code=404, detail="str not found")
-    else:
-        pass
-        #TODO REDIRECT
-
-
-@app.put("/save/{str_variable}", status_code=200)
-def save_fun_put(str_variable: str):
-
-    if str_variable not in settings.str_to_save:
-        settings.str_to_save.append(str_variable)
+#     if str_variable not in settings.str_to_save:
+#         raise HTTPException(status_code=404, detail="str not found")
+#     else:
+#         pass
+#         #TODO REDIRECT
 
 
-@app.delete("/save/{str_variable}", status_code=200)
-def delete_fun_get(str_variable: str):
-    settings.str_to_save = [
-        s for s in settings.str_to_save if s != str_variable
-    ]
+# @app.put("/save/{str_variable}", status_code=200)
+# def save_fun_put(str_variable: str):
+
+#     if str_variable not in settings.str_to_save:
+#         settings.str_to_save.append(str_variable)
 
 
-@app.post("/save/{str_variable}", status_code=201)
-def save_fun_post(str_variable: str):
-    raise HTTPException(status_code=400, detail="Bad request")
+# @app.delete("/save/{str_variable}", status_code=200)
+# def delete_fun_get(str_variable: str):
+#     settings.str_to_save = [
+#         s for s in settings.str_to_save if s != str_variable
+#     ]
+
+
+# @app.post("/save/{str_variable}", status_code=201)
+# def save_fun_post(str_variable: str):
+#     raise HTTPException(status_code=400, detail="Bad request")
