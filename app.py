@@ -13,7 +13,7 @@ security = HTTPBasic()
 
 class Settings(BaseSettings):
     events_counter: int = 0
-    str_to_save: List[str]
+    str_to_save: List[str] = []
 
 
 class EventCounterRq(BaseModel):
