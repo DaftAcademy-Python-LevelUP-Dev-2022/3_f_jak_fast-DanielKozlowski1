@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sun May 29 18:47:08 2022
+# Make data base, printed on Mon May 30 19:54:27 2022
 
 # Variables
 
@@ -42,9 +42,9 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/36/sttg3gv93pd_jsd4rc5c80xh0000gn/T/vscode-ipc-438ef16e-d728-4060-9c64-80d20751481d.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/36/sttg3gv93pd_jsd4rc5c80xh0000gn/T/vscode-ipc-a0968b78-db42-485f-9679-1731de9bb71f.sock
 # environment
-VSCODE_CWD = /Users/danielkozlowski/Desktop/DAFT-dev/3_f_jak_fast-DanielKozlowski1
+VSCODE_CWD = /Users/danielkozlowski
 # environment
 PATH = /Users/danielkozlowski/.poetry/bin:/Users/danielkozlowski/.pyenv/shims:/usr/local/opt/python/libexec/bin:/Users/danielkozlowski/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin
 # environment
@@ -56,11 +56,11 @@ PYENV_ROOT = /Users/danielkozlowski/.pyenv
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.tm2e3wIkhf/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4RtnawUyNz/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.CDCoe4rF0b/org.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.ydif9cvsjl/org.xquartz:0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -108,7 +108,7 @@ USER = danielkozlowski
 # makefile
 .DEFAULT_GOAL := .git/hooks/pre-commit
 # environment
-TERM_SESSION_ID = 37DABDF2-5851-4EA8-8F5C-E518DE70ECCD
+TERM_SESSION_ID = C27FC2DF-77D0-47BA-809F-4E5D59B6A334
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -132,7 +132,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 440
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.65319095.65319101.03BB944A-D4DB-4CBC-AD7D-E2386E12F510
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.65319095.65319101.3DDF4263-8FF2-48A1-8507-E297E52D61D2
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -164,7 +164,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 752
+VSCODE_PID = 750
 # variable set hash-table stats:
 # Load=77/1024=8%, Rehash=0, Collisions=2/101=2%
 
@@ -174,9 +174,9 @@ VSCODE_PID = 752
 
 # Directories
 
-# . (device 16777220, inode 65893268): 25 files, no impossibilities.
+# . (device 16777225, inode 65893268): 26 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -287,8 +287,10 @@ coverage: test
 	
 
 init: poetry.lock .git/hooks/pre-commit
- 
 #  Phony target (prerequisite of .PHONY).
+ 
+make: *** No rule to make target `all'.  Stop.
+
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -340,8 +342,6 @@ shell: poetry.lock
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun May 29 18:47:08 2022
+# Finished Make data base on Mon May 30 19:54:27 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
