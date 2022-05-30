@@ -3,7 +3,7 @@ import datetime
 from typing import Dict, List, Union, Optional
 
 from fastapi import FastAPI, HTTPException, Request, Depends
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, BaseSettings
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
@@ -175,8 +175,9 @@ def save_fun_get(str_variable: str):
     if str_variable not in settings.str_to_save:
         raise HTTPException(status_code=404, detail="str not found")
     else:
-        pass
-        #TODO REDIRECT
+        return RedirectResponse(
+            url="/info", status_code=301
+        )
 
 
 @app.put("/save/{str_variable}", status_code=200)
